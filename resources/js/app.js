@@ -6,8 +6,10 @@ import { createInertiaApp } from "@inertiajs/vue3";
 
 createInertiaApp({
     resolve: (name) => {
-        const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
-        return pages[`./Pages/${name}.vue`];
+        return _resolvePageComponent(
+            name,
+            import.meta.glob("./Pages/**/*.vue")
+        );
     },
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
@@ -15,3 +17,16 @@ createInertiaApp({
             .mount(el);
     },
 });
+
+// Create fun global components
+function _resolvePageComponent(name, pages) {
+    for (const path in pages) {
+        if (path.endsWith(`${name.replace(".", "/")}.vue`)) {
+            return typeof pages[path] === "function"
+                ? pages[path]()
+                : pages[path];
+        }
+    }
+
+    throw new Error(`Page not found: ${name}`);
+}
