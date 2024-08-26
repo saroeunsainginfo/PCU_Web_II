@@ -1,0 +1,5 @@
+roles.sql
+CREATE TABLE roles (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL UNIQUE
+);
