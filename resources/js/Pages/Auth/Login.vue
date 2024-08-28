@@ -18,7 +18,7 @@ function submit() {
         <div
             class="absolute bottom-32 left-[29rem] -z-1 left w-24 h-24 bg-blue-800 rounded-full"
         ></div>
-        <div class="z-20 p-10 rounded-sm shadow-2xl md:w-[30rem] bg-white">
+        <div class="z-20 p-10 rounded-sm shadow-md md:w-[30rem] bg-white">
             <form @submit.prevent="submit" class="flex flex-col">
                 <div class="mb-5">
                     <h3 class="text-xl font-bold">Sign In</h3>
