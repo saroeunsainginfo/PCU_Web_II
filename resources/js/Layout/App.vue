@@ -1,5 +1,5 @@
 <script setup>
-import SideBar from "../Components/SideBar.vue";
+import SideBar from "../Components/Sidebar.vue";
 import Header from "../Components/Header.vue";
 </script>
 
@@ -13,7 +13,7 @@ import Header from "../Components/Header.vue";
 
             <!-- ==== Main Content ==== -->
             <main>
-                <div class="mx-auto max-w-screen-2xl p-4">
+                <div class="mx-auto max-w-screen-2xl p-3">
                     <slot />
                 </div>
             </main>
