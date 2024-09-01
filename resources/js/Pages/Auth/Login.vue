@@ -2,6 +2,8 @@
 import { useForm } from "@inertiajs/vue3";
 import Input from "../../Components/Input.vue";
 import ButtonLogin from "../../Components/ButtonLogin.vue";
+import CircleRight from "../../Components/CircleLeft.vue";
+import CircleLeft from "../../Components/CircleLeft.vue";
 
 const form = useForm({
     username: null,
@@ -14,11 +16,15 @@ function submit() {
 </script>
 
 <template>
-    <div class="relative h-screen w-screen flex justify-center items-center">
+    <div class="h-screen w-screen flex justify-center items-center">
+        <div class="absolute top-[7.8rem] right-[30.7rem]">
+            <CircleRight class="w-10 h-10" />
+            <CircleRight class="w-10 h-10" />
+            <CircleRight class="w-14 h-14" />
+        </div>
         <div
-            class="absolute bottom-32 left-[29rem] -z-1 left w-24 h-24 bg-blue-800 rounded-full"
-        ></div>
-        <div class="z-20 p-10 rounded-sm shadow-md md:w-[30rem] bg-white">
+            class="relative z-10 p-10 rounded-sm shadow-md md:w-[30rem] bg-white"
+        >
             <form @submit.prevent="submit" class="flex flex-col">
                 <div class="mb-5">
                     <h3 class="text-xl font-bold">Sign In</h3>
@@ -39,9 +45,11 @@ function submit() {
                 <ButtonLogin btn_login="Login" class="mt-2" />
             </form>
         </div>
-        <div
-            class="absolute -z-1 top-36 right-[30rem] w-16 h-16 bg-blue-800 rounded-full"
-        ></div>
+        <div class="absolute bottom-[7rem] left-[31rem]">
+            <CircleLeft class="w-10 h-10" />
+            <CircleLeft class="w-16 h-16" />
+            <CircleLeft class="w-10 h-10" />
+        </div>
     </div>
 </template>
 
