@@ -8,6 +8,7 @@ import CircleLeft from "../../Components/CircleLeft.vue";
 const form = useForm({
     username: null,
     password: null,
+    password_confirm: null,
 });
 
 function submit() {
@@ -41,6 +42,12 @@ function submit() {
                     placeholder="********"
                     type="password"
                     v-model="form.password"
+                />
+                <Input
+                    label_name="Confirm Password"
+                    placeholder="********"
+                    type="password"
+                    v-model="form.password_confirm"
                 />
                 <ButtonLogin btn_login="Login" class="mt-2" />
             </form>
