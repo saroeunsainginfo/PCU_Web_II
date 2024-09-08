@@ -1,9 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --header-height: 64px;
+    --sidebar-width: 250px;
+    --primary-color: #163f78;
+}
+
+.header-height {
+    height: var(--header-height);
+}
+.sidebar-width {
+    width: var(--sidebar-width);
+    transition: width 0.4s ease;
+}
+.sidebar-collapsed {
+    width: 0;
+}
+
+.content-screen {
+    height: calc(100vh - var(--header-height));
+}
+@layer dashboard {
+    .summary-card {
+        @apply bg-amber-300;
+    }
+}
+
 @layer components {
-    .header-height {
-        height: 70px;
+    .card-white {
+        @apply bg-white border border-greyBorderColor rounded-lg;
+    }
+    .input-default {
+        @apply w-full h-10 block cursor-text rounded-md ps-3 pe-3 border text-black outline-none hover:bg-whiteHover focus:border-focusColor focus:bg-white placeholder-placeholderColor;
+    }
+    .input-subfix-icon {
+        @apply input-default pe-7 relative;
+    }
+    .input-prefix-icon {
+        @apply input-default ps-8 relative;
+    }
+    .button-primary {
+        @apply h-10 bg-primaryColor grid px-3 text-white items-center cursor-pointer select-none rounded-md hover:border-indigo-600 hover:bg-onFocusPrimaryColor hover:text-white focus:bg-onFocusPrimaryColor focus:text-white focus:shadow-none duration-300;
+    }
+    .button-white {
+        @apply h-10 bg-white grid px-3 text-black items-center cursor-pointer select-none rounded-md border border-greyBorderColor hover:text-primaryColor focus:text-black focus:shadow-none;
+    }
+    .center-in-flex {
+        @apply flex items-center;
     }
 }
