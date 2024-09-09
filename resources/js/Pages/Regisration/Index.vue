@@ -1,9 +1,9 @@
 <script setup>
 import App from "../../Layout/App.vue";
-import {reactive} from  "vue"
+import { Link } from "@inertiajs/vue3";
+import { reactive } from "vue";
 import TitleContent from "../../Components/Icons/TitleContent.vue";
 import NoRecord from "../../Components/NoRecord.vue";
-
 
 const titleContent = [{ label: "Regisration Management" }];
 
@@ -13,37 +13,44 @@ const listRegistrations = reactive([
         first_name: "Ra",
         last_name: "Panha",
         phone_number: "089 123 125",
-        email: "rapanhalucky@email.com"
+        email: "rapanhalucky@email.com",
     },
     {
         id: 2,
         first_name: "Ra",
         last_name: "Panha",
         phone_number: "089 123 125",
-        email: "rapanhalucky@email.com"
+        email: "rapanhalucky@email.com",
     },
     {
         id: 3,
         first_name: "Ra",
         last_name: "Panha",
         phone_number: "089 123 125",
-        email: "rapanhalucky@email.com"
+        email: "rapanhalucky@email.com",
     },
     {
         id: 4,
         first_name: "Ra",
         last_name: "Panha",
         phone_number: "089 123 125",
-        email: "rapanhalucky@email.com"
+        email: "rapanhalucky@email.com",
     },
-])
-
+]);
 </script>
 
 <template>
     <App>
-        <TitleContent :title="titleContent" />
-
+        <div class="flex justify-between items-center">
+            <TitleContent :title="titleContent" />
+            <Link
+                :href="route('regisration.create')"
+                role="button"
+                class="button-primary px-12"
+            >
+                Create Registration
+            </Link>
+        </div>
         <div class="overflow-auto mt-4">
             <table class="table-auto min-w-max w-full bg-white">
                 <thead class="h-10">
@@ -60,8 +67,10 @@ const listRegistrations = reactive([
                 </thead>
                 <tbody>
                     <tr
-                        v-for="(item, index ) in listRegistrations" :key="index"
-                    class="divide-x divide-y border-b border-x text-center">
+                        v-for="(item, index) in listRegistrations"
+                        :key="index"
+                        class="divide-x divide-y border-b border-x text-center"
+                    >
                         <td class="p-2">{{ item.id }}</td>
                         <td class="p-2">{{ item.first_name }}</td>
                         <td class="p-2">{{ item.last_name }}</td>

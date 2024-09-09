@@ -163,7 +163,7 @@ function submit() {
                                 </div>
                                 <div class="flex justify-end w-full">
                                     <button class="button-primary px-12">
-                                        បញ្ជូន
+                                        Created
                                     </button>
                                 </div>
                             </div>
