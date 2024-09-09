@@ -24,7 +24,7 @@ const props = defineProps({
                 :href="route('dashboard.index')"
                 :class="{ hidden: isCollapsed }"
                 class="text-2xl px-4 font-bold text-nowrap"
-                >Dashboard</Link
+                >Dentisted</Link
             >
         </div>
         <div class="flex justify-between items-center w-full gap-3 px-4">
@@ -122,7 +122,7 @@ const props = defineProps({
                                 <div class="px-3 pb-3">
                                     <MenuItem>
                                         <Link
-                                            class="group flex justify-center w-full bg-lightGreyColor border border-greyBorderColor text-black rounded-md px-2 py-2 hover:bg-lightGreyHoverColor transition-colors"
+                                            class="group flex justify-center w-full bg-lightGreyColor border border-greyBorderColor text-red-500 rounded-md px-2 py-2 hover:bg-lightGreyHoverColor transition-colors"
                                         >
                                             Sign Out
                                         </Link>

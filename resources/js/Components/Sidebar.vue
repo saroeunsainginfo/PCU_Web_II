@@ -12,12 +12,12 @@ import AppointmentIcon from './Icons/AppointmentIcon.vue';
 import InventoryIcon from './Icons/InventoryIcon.vue';
 
 const menuPatient = [
-    {title: '1.1. Registration'},
-    {title: '1.2. Records'},
-    {title: '1.3. Scheduling'},
+    {title: '1.1. Registration', href: "regisration.index"},
+    {title: '1.2. Records', href: "record.index"},
+    {title: '1.3. Scheduling', href: "scheduling.index"},
 ];
 
-const menuMembers = [
+const menuDentists = [
     {title: '2.1. Dentist Profiles'},
     {title: '2.2. Schedule'},
 ];
@@ -30,7 +30,8 @@ const menuAppointment = [
 
 const menuTreatment = [
     {title: '4.1. Treatment Plans'},
-    {title: '4.2. '},
+    {title: '4.2. Procedure Tracking'},
+    {title: '4.3. Billing Integration'},
 ];
 const menuReports = [
     {title: '5.1. '},
@@ -81,7 +82,7 @@ const prop = defineProps({
         <MenuItem
             :index="3"
             title="Dentist Management"
-            :items="menuMembers"
+            :items="menuDentists"
         >
             <template v-slot:icon>
                 <MemberIcon
@@ -89,7 +90,7 @@ const prop = defineProps({
                 />
             </template>
         </MenuItem>
-        <MenuItem
+        <!-- <MenuItem
             :index="4"
             title="Appointment"
             :items="menuAppointment"
@@ -165,7 +166,7 @@ const prop = defineProps({
                     fill="white"
                 />
             </template>
-        </MenuItem>
+        </MenuItem> -->
     </aside>
 </template>
 
