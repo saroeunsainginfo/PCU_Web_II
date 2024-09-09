@@ -8,4 +8,9 @@ class RegisrationController
     {
         return inertia('Regisration/Index');
     }
+
+    public function create()
+    {
+        return inertia('Regisration/Create');
+    }
 }

@@ -26,7 +26,7 @@ export default {
             },
 
             colors: {
-                primaryColor: "#03045e",
+                primaryColor: "#001c55",
                 onFocusPrimaryColor: "#0D294F",
                 scaffoldBackground: "#F7F7F7",
                 scaffoldMemberBackground: "#151D32",
