@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
     <button
-        class="p-2 text-white font-bold bg-blue-800 rounded-md hover:bg-blue-700"
+        class="p-2 text-white  bg-blue-800 rounded-md hover:bg-blue-700"
     >
         {{ btn_login }}
     </button>
