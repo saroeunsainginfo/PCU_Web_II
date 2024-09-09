@@ -56,117 +56,121 @@ const prop = defineProps({
 
 <template>
     <aside :class="{ 'sidebar-width': true, 'sidebar-collapsed' : isCollapsed }"
-           class="flex-shrink-0 h-full bg-primaryColor text-white overflow-y-auto">
-        <MenuItem
-            :index="1"
-            title="Dashboard"
-            :href="route('dashboard.index')"
-        >
-            <template v-slot:icon>
-                <DashboardIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="2"
-            title="Patient Management"
-            :items="menuPatient"
-        >
-            <template v-slot:icon>
-                <StockIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="3"
-            title="Dentist Management"
-            :items="menuDentists"
-        >
-            <template v-slot:icon>
-                <MemberIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <!-- <MenuItem
-            :index="4"
-            title="Appointment"
-            :items="menuAppointment"
-        >
-            <template v-slot:icon>
-                <AppointmentIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="5"
-            title="Treatment"
-            :items="menuTreatment"
-        >
-            <template v-slot:icon>
-                <RiskIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="6"
-            title="Payment "
-            :items="menuTreatment"
-        >
-            <template v-slot:icon>
-                <PaymentIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="7"
-            title="Inventory"
-            :items="menuTreatment"
-        >
-            <template v-slot:icon>
-                <InventoryIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="8"
-            title="Reports"
-            :items="menuReports"
-        >
-            <template v-slot:icon>
-                <ReportIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="9"
-            title="Notification"
-            :href="route('dashboard.index')"
-        >
-            <template v-slot:icon>
-                <NotificationIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem>
-        <MenuItem
-            :index="10"
-            title="Settings"
-            :items="menuSettings"
-        >
-            <template v-slot:icon>
-                <SettingIcon
-                    fill="white"
-                />
-            </template>
-        </MenuItem> -->
+           class="flex-shrink-0 flex flex-col justify-between h-full bg-primaryColor text-white overflow-y-auto">
+        <div>
+            <MenuItem
+                :index="1"
+                title="Dashboard"
+                :href="route('dashboard.index')"
+            >
+                <template v-slot:icon>
+                    <DashboardIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="2"
+                title="Patient Management"
+                :items="menuPatient"
+            >
+                <template v-slot:icon>
+                    <StockIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="3"
+                title="Dentist Management"
+                :items="menuDentists"
+            >
+                <template v-slot:icon>
+                    <MemberIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <!-- <MenuItem
+                :index="4"
+                title="Appointment"
+                :items="menuAppointment"
+            >
+                <template v-slot:icon>
+                    <AppointmentIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="5"
+                title="Treatment"
+                :items="menuTreatment"
+            >
+                <template v-slot:icon>
+                    <RiskIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="6"
+                title="Payment "
+                :items="menuTreatment"
+            >
+                <template v-slot:icon>
+                    <PaymentIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="7"
+                title="Inventory"
+                :items="menuTreatment"
+            >
+                <template v-slot:icon>
+                    <InventoryIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="8"
+                title="Reports"
+                :items="menuReports"
+            >
+                <template v-slot:icon>
+                    <ReportIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="9"
+                title="Notification"
+                :href="route('dashboard.index')"
+            >
+                <template v-slot:icon>
+                    <NotificationIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem>
+            <MenuItem
+                :index="10"
+                title="Settings"
+                :items="menuSettings"
+            >
+                <template v-slot:icon>
+                    <SettingIcon
+                        fill="white"
+                    />
+                </template>
+            </MenuItem> -->
+        </div>
+
+        <p class="text-gray-400 text-center mb-2">Version 1.0</p>
     </aside>
 </template>
 
