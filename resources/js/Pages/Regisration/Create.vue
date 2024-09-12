@@ -1,7 +1,9 @@
 <script setup>
 import { useForm } from "@inertiajs/vue3";
+import { ref } from "vue";
 import App from "../../Layout/App.vue";
 import TitleContent from "../../Components/Icons/TitleContent.vue";
+import ListBoxGender from "../../Components/Registration/ListBoxGender.vue";
 
 const titleContent = [{ label: "Created Registration" }];
 
@@ -15,6 +17,14 @@ const form = useForm({
     address: null,
     instance: null,
 });
+
+const peopleArray = [{ name: "Male" }, { name: "Famele" }];
+
+const selectedPersonObject = ref(peopleArray[0]);
+
+const updateSelectedPerson = (person) => {
+    selectedPersonObject.value = person;
+};
 
 function submit() {
     console.log(form);
@@ -93,11 +103,12 @@ function submit() {
                                     ></label
                                 >
                                 <div class="block w-9/12">
-                                    <input
-                                        v-model="form.gender"
-                                        class="input-default"
-                                        type="text"
-                                        placeholder="last name"
+                                    <ListBoxGender
+                                        :people="peopleArray"
+                                        :selectedPerson="selectedPersonObject"
+                                        @update:selectedPerson="
+                                            updateSelectedPerson
+                                        "
                                     />
                                 </div>
                             </div>

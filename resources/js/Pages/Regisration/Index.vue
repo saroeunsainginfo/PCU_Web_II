@@ -1,42 +1,15 @@
 <script setup>
 import App from "../../Layout/App.vue";
 import { Link } from "@inertiajs/vue3";
-import { reactive } from "vue";
+import { defineProps } from "vue";
 import TitleContent from "../../Components/Icons/TitleContent.vue";
 import NoRecord from "../../Components/NoRecord.vue";
 
-const titleContent = [{ label: "Regisration Management" }];
+const props = defineProps({
+    registrations: Array,
+});
 
-const listRegistrations = reactive([
-    {
-        id: 1,
-        first_name: "Ra",
-        last_name: "Panha",
-        phone_number: "089 123 125",
-        email: "rapanhalucky@email.com",
-    },
-    {
-        id: 2,
-        first_name: "Ra",
-        last_name: "Panha",
-        phone_number: "089 123 125",
-        email: "rapanhalucky@email.com",
-    },
-    {
-        id: 3,
-        first_name: "Ra",
-        last_name: "Panha",
-        phone_number: "089 123 125",
-        email: "rapanhalucky@email.com",
-    },
-    {
-        id: 4,
-        first_name: "Ra",
-        last_name: "Panha",
-        phone_number: "089 123 125",
-        email: "rapanhalucky@email.com",
-    },
-]);
+const titleContent = [{ label: "Regisration Management" }];
 </script>
 
 <template>
@@ -67,20 +40,25 @@ const listRegistrations = reactive([
                 </thead>
                 <tbody>
                     <tr
-                        v-for="(item, index) in listRegistrations"
+                        v-if="registrations.length"
+                        v-for="(item, index) in registrations"
                         :key="index"
                         class="divide-x divide-y border-b border-x text-center"
                     >
-                        <td class="p-2">{{ item.id }}</td>
-                        <td class="p-2">{{ item.first_name }}</td>
-                        <td class="p-2">{{ item.last_name }}</td>
-                        <td class="p-2">{{ item.phone_number }}</td>
-                        <td class="p-2">{{ item.email }}</td>
-                        <td class="p-2"></td>
+                        <td class="p-2">{{ index + 1 }}</td>
+                        <td class="pl-6 text-left">{{ item.first_name }}</td>
+                        <td class="pl-6 text-left">{{ item.last_name }}</td>
+                        <td class="pl-6 text-left">{{ item.phone }}</td>
+                        <td class="pl-6 text-left">{{ item.email }}</td>
+                        <td class="p-2">
+                            <SelectAction
+                                class="flex justify-center items-center"
+                                :data="item"
+                                :modify-options="modifyOptions"
+                            />
+                        </td>
                     </tr>
-
-                    <!-- === If is Not Items == -->
-                    <tr>
+                    <tr v-else>
                         <NoRecord />
                     </tr>
                 </tbody>

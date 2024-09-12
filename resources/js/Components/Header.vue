@@ -15,7 +15,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <header class="header-height flex items-center w-full bg-primaryColor text-white">
+    <header
+        class="header-height flex items-center w-full bg-primaryColor text-white"
+    >
         <div
             :class="{ 'sidebar-width': true, 'sidebar-collapsed': isCollapsed }"
             class="w-full flex-shrink-0"
@@ -73,7 +75,6 @@ const props = defineProps({
                         leave-from-class="transform scale-100 opacity-100"
                         leave-to-class="transform scale-95 opacity-0"
                     >
-
                         <MenuItems
                             class="absolute z-20 right-0 w-72 origin-top-right rounded-md border border-lightGreyColor bg-white shadow-lg focus:outline-none"
                         >
@@ -122,6 +123,7 @@ const props = defineProps({
                                 <div class="px-3 pb-3">
                                     <MenuItem>
                                         <Link
+                                            :href="route('login')"
                                             class="group flex justify-center w-full bg-lightGreyColor border border-greyBorderColor text-red-500 rounded-md px-2 py-2 hover:bg-lightGreyHoverColor transition-colors"
                                         >
                                             Sign Out
