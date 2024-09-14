@@ -1,15 +1,26 @@
 <script setup>
 import App from "../../Layout/App.vue";
 import { Link } from "@inertiajs/vue3";
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 import TitleContent from "../../Components/Icons/TitleContent.vue";
 import NoRecord from "../../Components/NoRecord.vue";
+import Action from "../../Components/Action.vue";
 
 const props = defineProps({
     registrations: Array,
 });
 
 const titleContent = [{ label: "Regisration Management" }];
+
+const onEdit = (id) => {
+    alert(`Edit item with ID: ${id}`);
+};
+
+const onDelete = (id) => {
+    if (confirm(`Are you sure you want to delete item with ID: ${id}?`)) {
+        alert(`Deleted item with ID: ${id}`);
+    }
+};
 </script>
 
 <template>
@@ -24,6 +35,7 @@ const titleContent = [{ label: "Regisration Management" }];
                 Create Registration
             </Link>
         </div>
+
         <div class="overflow-auto mt-4">
             <table class="table-auto min-w-max w-full bg-white">
                 <thead class="h-10">
@@ -51,10 +63,10 @@ const titleContent = [{ label: "Regisration Management" }];
                         <td class="pl-6 text-left">{{ item.phone }}</td>
                         <td class="pl-6 text-left">{{ item.email }}</td>
                         <td class="p-2">
-                            <SelectAction
-                                class="flex justify-center items-center"
-                                :data="item"
-                                :modify-options="modifyOptions"
+                            <Action
+                                :itemId="item.id"
+                                @edit="onEdit(item.id)"
+                                @delete="onDelete(item.id)"
                             />
                         </td>
                     </tr>
