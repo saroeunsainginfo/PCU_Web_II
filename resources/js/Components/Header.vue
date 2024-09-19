@@ -102,21 +102,7 @@ const props = defineProps({
                                         ]"
                                     >
                                         <UserIcon size="20" class="mr-2" />
-                                        គណនី
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem v-slot="{ active }">
-                                    <Link
-                                        :class="[
-                                            active ? 'bg-lightGreyColor' : '',
-                                            'group flex w-full items-center px-3 py-2 transition-colors',
-                                        ]"
-                                    >
-                                        <LockPasswordIcon
-                                            size="20"
-                                            class="mr-2"
-                                        />
-                                        ប្តូរពាក្យសម្ងាត់
+                                        Profile
                                     </Link>
                                 </MenuItem>
                                 <hr class="my-3" />

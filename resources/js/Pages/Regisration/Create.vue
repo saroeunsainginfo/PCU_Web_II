@@ -33,7 +33,7 @@ function submit() {
 
 <template>
     <App>
-        <Link :href="route('regisration.index')">
+        <Link :href="route('registration.index')">
             <TitleContent :title="titleContent" />
         </Link>
 

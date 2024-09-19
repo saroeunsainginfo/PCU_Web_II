@@ -1,62 +1,54 @@
 <script setup>
-import NotificationIcon from './Icons/NotificationIcon.vue';
-import MenuItem from './MenuItem.vue';
-import ReportIcon from './Icons/ReportIcon.vue';
-import RiskIcon from './Icons/RiskIcon.vue';
-import StockIcon from './Icons/StockIcon.vue';
-import PaymentIcon from './Icons/PaymentIcon.vue';
-import SettingIcon from './Icons/SettingIcon.vue';
-import MemberIcon from './Icons/MemberIcon.vue';
-import DashboardIcon from './Icons/DashboardIcon.vue';
-import AppointmentIcon from './Icons/AppointmentIcon.vue';
-import InventoryIcon from './Icons/InventoryIcon.vue';
+import MenuItem from "./MenuItem.vue";
+import StockIcon from "./Icons/StockIcon.vue";
+import MemberIcon from "./Icons/MemberIcon.vue";
+import DashboardIcon from "./Icons/DashboardIcon.vue";
 
 const menuPatient = [
-    {title: '1.1. Registration', href: "regisration.index"},
-    {title: '1.2. Records', href: "record.index"},
-    {title: '1.3. Scheduling', href: "scheduling.index"},
+    { title: "1.1. Registration", href: "registration.index" },
 ];
 
 const menuDentists = [
-    {title: '2.1. Dentist Profiles'},
-    {title: '2.2. Schedule'},
+    { title: "2.1. Dentist Profiles" },
+    { title: "2.2. Schedule" },
 ];
 
 const menuAppointment = [
-    {title: '3.1. Booking',},
-    {title: '3.2. Automatic Reminders'},
-    {title: '3.2. Real-time ', },
+    { title: "3.1. Booking" },
+    { title: "3.2. Automatic Reminders" },
+    { title: "3.2. Real-time " },
 ];
 
 const menuTreatment = [
-    {title: '4.1. Treatment Plans'},
-    {title: '4.2. Procedure Tracking'},
-    {title: '4.3. Billing Integration'},
+    { title: "4.1. Treatment Plans" },
+    { title: "4.2. Procedure Tracking" },
+    { title: "4.3. Billing Integration" },
 ];
 const menuReports = [
-    {title: '5.1. '},
-    {title: '5.2. '},
-    {title: '5.3. '},
-    {title: '5.4. '},
-    {title: '5.5. '},
-    {title: '5.6. '},
+    { title: "5.1. " },
+    { title: "5.2. " },
+    { title: "5.3. " },
+    { title: "5.4. " },
+    { title: "5.5. " },
+    { title: "5.6. " },
 ];
 
 const menuSettings = [
-    {title: '6.1. '},
-    {title: '6.2. ', href: "dashboard.index"},
-    {title: '6.3. '},
+    { title: "6.1. " },
+    { title: "6.2. ", href: "dashboard.index" },
+    { title: "6.3. " },
 ];
 
 const prop = defineProps({
     isCollapsed: Boolean,
-})
-
+});
 </script>
 
 <template>
-    <aside :class="{ 'sidebar-width': true, 'sidebar-collapsed' : isCollapsed }"
-           class="flex-shrink-0 flex flex-col justify-between h-full bg-primaryColor text-white overflow-y-auto">
+    <aside
+        :class="{ 'sidebar-width': true, 'sidebar-collapsed': isCollapsed }"
+        class="flex-shrink-0 flex flex-col justify-between h-full bg-white text-black overflow-y-auto shadow-shadowSide"
+    >
         <div>
             <MenuItem
                 :index="1"
@@ -64,9 +56,7 @@ const prop = defineProps({
                 :href="route('dashboard.index')"
             >
                 <template v-slot:icon>
-                    <DashboardIcon
-                        fill="white"
-                    />
+                    <DashboardIcon fill="black" />
                 </template>
             </MenuItem>
             <MenuItem
@@ -75,9 +65,7 @@ const prop = defineProps({
                 :items="menuPatient"
             >
                 <template v-slot:icon>
-                    <StockIcon
-                        fill="white"
-                    />
+                    <StockIcon fill="black" />
                 </template>
             </MenuItem>
             <MenuItem
@@ -86,9 +74,7 @@ const prop = defineProps({
                 :items="menuDentists"
             >
                 <template v-slot:icon>
-                    <MemberIcon
-                        fill="white"
-                    />
+                    <MemberIcon fill="black" />
                 </template>
             </MenuItem>
             <!-- <MenuItem
@@ -174,5 +160,4 @@ const prop = defineProps({
     </aside>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -28,7 +28,7 @@ const onDelete = (id) => {
         <div class="flex justify-between items-center">
             <TitleContent :title="titleContent" />
             <Link
-                :href="route('regisration.create')"
+                :href="route('registration.create')"
                 role="button"
                 class="button-primary px-12"
             >

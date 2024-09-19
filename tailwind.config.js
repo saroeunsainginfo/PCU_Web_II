@@ -7,6 +7,9 @@ export default {
     ],
     theme: {
         extend: {
+            boxShadow: {
+                shadowSide: "0 0 10px 2px rgb(0,0,0,0.3)",
+            },
             fontFamily: {
                 "default-sans": ["Roboto", "Hanuman", "sans-serif"],
                 "default-sans-member": ["Oxanium", "Hanuman", "sans-serif"],
@@ -43,7 +46,7 @@ export default {
                 lightGreyColor: "#F5F7FA",
                 lightGreyHoverColor: "#E8EAED",
                 greyBorderColor: "#E5E5E5",
-                lightBlueHover: "#244F8B",
+                lightBlueHover: "#ced4da",
                 secondaryColor: "#EAEAEA",
                 greenColor: "#46C25F",
                 greenHoverColor: "#36a84d",
