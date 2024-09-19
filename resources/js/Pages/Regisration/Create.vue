@@ -1,5 +1,5 @@
 <script setup>
-import { useForm } from "@inertiajs/vue3";
+import { useForm, Link } from "@inertiajs/vue3";
 import { ref } from "vue";
 import App from "../../Layout/App.vue";
 import TitleContent from "../../Components/Icons/TitleContent.vue";
@@ -33,7 +33,9 @@ function submit() {
 
 <template>
     <App>
-        <TitleContent :title="titleContent" />
+        <Link :href="route('regisration.index')">
+            <TitleContent :title="titleContent" />
+        </Link>
 
         <div class="card-white mt-3">
             <div class="bg-primaryColor text-white rounded-t-md px-4 py-2">
