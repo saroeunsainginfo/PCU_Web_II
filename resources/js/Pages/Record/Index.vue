@@ -2,15 +2,13 @@
 import App from '../../Layout/App.vue';
 import TitleContent from '../../Components/Icons/TitleContent.vue';
 
-const titleContent= [{label: "Records"}]
+const titleContent = [{ label: "Records" }]
 </script>
 
 <template>
     <App>
-        <TitleContent :title="titleContent"/>
+        <TitleContent :title="titleContent" />
     </App>
 </template>
 
-<style>
-
-</style>
+<style></style>

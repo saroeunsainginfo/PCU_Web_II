@@ -27,21 +27,15 @@ const onDelete = (id) => {
     <App>
         <div class="flex justify-between items-center">
             <TitleContent :title="titleContent" />
-            <Link
-                :href="route('registration.create')"
-                role="button"
-                class="button-primary px-12"
-            >
-                Create Registration
+            <Link :href="route('registration.create')" role="button" class="button-primary px-12">
+            Create Registration
             </Link>
         </div>
 
         <div class="overflow-auto mt-4">
             <table class="table-auto min-w-max w-full bg-white">
                 <thead class="h-10">
-                    <tr
-                        class="bg-primaryColor text-white divide-x divide-greyBorderColor"
-                    >
+                    <tr class="bg-primaryColor text-white divide-x divide-greyBorderColor">
                         <th class="px-2 font-bold">#</th>
                         <th class="px-2 text-nowrap">First Name</th>
                         <th class="px-2 text-nowrap">Last Name</th>
@@ -51,23 +45,15 @@ const onDelete = (id) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr
-                        v-if="registrations.length"
-                        v-for="(item, index) in registrations"
-                        :key="index"
-                        class="divide-x divide-y border-b border-x text-center"
-                    >
+                    <tr v-if="registrations.length" v-for="(item, index) in registrations" :key="index"
+                        class="divide-x divide-y border-b border-x text-center">
                         <td class="p-2">{{ index + 1 }}</td>
                         <td class="pl-6 text-left">{{ item.first_name }}</td>
                         <td class="pl-6 text-left">{{ item.last_name }}</td>
                         <td class="pl-6 text-left">{{ item.phone }}</td>
                         <td class="pl-6 text-left">{{ item.email }}</td>
                         <td class="p-2">
-                            <Action
-                                :itemId="item.id"
-                                @edit="onEdit(item.id)"
-                                @delete="onDelete(item.id)"
-                            />
+                            <Action :itemId="item.id" @edit="onEdit(item.id)" @delete="onDelete(item.id)" />
                         </td>
                     </tr>
                     <tr v-else>
