@@ -1,5 +1,5 @@
 <script setup>
-import {Link} from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 const props = defineProps({
     title: Array
@@ -15,17 +15,14 @@ const isLastItem = (index) => {
     <nav aria-label="Breadcrumb">
         <ul class="breadcrumbs">
             <li v-for="(crumb, index) in title" :key="index" class="inline-block mr-3">
-                <Link :href="route(crumb.link)" v-if="crumb.link && crumb.link !== '#' "
-                      class="font-bold text-lg text-primaryColor"
-                      :class="{
-                         'active-link': isLastItem(index) & breadcrumbs.length !== 1,
-                         'no-pointer-events': isLastItem(index),
-                       }">
-                    {{ crumb.label }}
+                <Link :href="route(crumb.link)" v-if="crumb.link && crumb.link !== '#'"
+                    class="font-bold text-lg text-primaryColor" :class="{
+                        'active-link': isLastItem(index) & breadcrumbs.length !== 1,
+                        'no-pointer-events': isLastItem(index),
+                    }">
+                {{ crumb.label }}
                 </Link>
-                <a href="#" v-else
-                   class="font-bold text-lg text-black"
-                >
+                <a href="#" v-else class="font-bold text-lg text-black">
                     {{ crumb.label }}
                 </a>
             </li>
