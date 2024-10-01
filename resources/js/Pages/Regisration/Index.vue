@@ -74,8 +74,17 @@ const titleContent = [{ label: "Registration Management" }];
                                                     active ? 'bg-lightGreyColor' : '',
                                                     'group flex w-full items-center px-3 py-2 transition-colors',
                                                 ]">
+                                                <EditIcon size="20" class="mr-2" />
+                                                Update
+                                                </Link>
+                                                </MenuItem>
+                                                <MenuItem v-slot="{ active }">
+                                                <Link :class="[
+                                                    active ? 'bg-lightGreyColor' : '',
+                                                    'group flex w-full items-center px-3 py-2 transition-colors',
+                                                ]">
                                                 <DeleteIcon size="20" class="mr-2" />
-                                                Profile
+                                                <p class="text-red-500">Delete</p>
                                                 </Link>
                                                 </MenuItem>
                                                 <hr class="my-3" />

@@ -6,7 +6,7 @@ Route::get('/', [App\Http\Controllers\Web\AuthController::class, 'index'])->name
 Route::get('/dashboard', [App\Http\Controllers\Web\DashboardController::class, 'index'])->name('dashboard.index');
 
 Route::get('/regisration/index', [App\Http\Controllers\Web\RegisrationController::class, 'index'])->name('registration.index');
-Route::get('/regisration/create', [App\Http\Controllers\Web\RegisrationController::class, 'create'])->name('registration.createe');
+Route::get('/regisration/create', [App\Http\Controllers\Web\RegisrationController::class, 'create'])->name('registration.create');
 
 // Admin
 Route::get('/admin/index', [App\Http\Controllers\Web\AdminController::class, 'index'])->name('admin.index');
