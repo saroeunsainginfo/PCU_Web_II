@@ -8,4 +8,9 @@ class AdminController
     {
         return inertia('Admin/Index');
     }
+
+    public function create()
+    {
+        return inertia('Admin/Create');
+    }
 }

@@ -10,6 +10,7 @@ Route::get('/regisration/create', [App\Http\Controllers\Web\RegisrationControlle
 
 // Admin
 Route::get('/admin/index', [App\Http\Controllers\Web\AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/create', [App\Http\Controllers\Web\AdminController::class, 'create'])->name('admin.create');
 
 // Dentist
 Route::get('/dentist/index', [App\Http\Controllers\Web\DentistController::class, 'index'])->name('dentist.index');
