@@ -18,7 +18,7 @@ const form = useForm({
     instance: null,
 });
 
-const peopleArray = [{ name: "Male" }, { name: "Famele" }];
+const peopleArray = [{ name: "Male" }, { name: "Famele" }, { name: "others" }];
 
 const selectedPersonObject = ref(peopleArray[0]);
 
