@@ -20,7 +20,6 @@ createInertiaApp({
     },
 });
 
-// Create fun global components
 function _resolvePageComponent(name, pages) {
     for (const path in pages) {
         if (path.endsWith(`${name.replace(".", "/")}.vue`)) {

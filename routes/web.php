@@ -2,15 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\Web\AuthController::class, 'index'])->name('login');
-Route::get('/dashboard', [App\Http\Controllers\Web\DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard', function () {
+    return inertia('Dashboard/Index');
+})->name('dashboard');
 
-Route::get('/regisration/index', [App\Http\Controllers\Web\RegisrationController::class, 'index'])->name('registration.index');
-Route::get('/regisration/create', [App\Http\Controllers\Web\RegisrationController::class, 'create'])->name('registration.create');
-
-// Admin
-Route::get('/admin/index', [App\Http\Controllers\Web\AdminController::class, 'index'])->name('admin.index');
-Route::get('/admin/create', [App\Http\Controllers\Web\AdminController::class, 'create'])->name('admin.create');
-
-// Dentist
-Route::get('/dentist/index', [App\Http\Controllers\Web\DentistController::class, 'index'])->name('dentist.index');
+// Auth/Login
+Route::get('/login', [App\Http\Controllers\Web\AuthController::class, 'login'])->name('auth.page');
+Route::post('/login', [App\Http\Controllers\Web\AuthController::class, 'authenticateLogin'])->name('auth.login');
+Route::get('/register', [App\Http\Controllers\Web\AuthController::class, 'register'])->name('auth.register');
+Route::post('/register', [App\Http\Controllers\Web\AuthController::class, 'authenticateRegister'])->name('auth.register');
