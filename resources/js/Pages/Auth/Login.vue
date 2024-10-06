@@ -1,7 +1,7 @@
 <script setup>
 import InputField from '../../Components/InputField.vue';
 import Button from '../../Components/Button.vue';
-import { Link, useForm } from '@inertiajs/vue3';
+import { Link, useForm, router } from '@inertiajs/vue3';
 
 const form = useForm({
     email: null,
@@ -9,7 +9,8 @@ const form = useForm({
 });
 
 function submit() {
-    console.log(form)
+    const data = form.data();
+    router.post(route("auth.login"), data);
 }
 </script>
 
