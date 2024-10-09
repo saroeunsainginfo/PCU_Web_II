@@ -22,7 +22,7 @@ function submit() {
                 <InputField v-model="form.email" label="Email" type="text" placeholder="email" />
                 <InputField v-model="form.password" label="Password" type="password" placeholder="********" />
                 <div>
-                    <Link :href="route('auth.register')" class="text-sm text-blue-500 hover:underline">Don't Have
+                    <Link :href="route('auth.register.page')" class="text-sm text-blue-500 hover:underline">Don't Have
                     account?
                     </Link>
                 </div>

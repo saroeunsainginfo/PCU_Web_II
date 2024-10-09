@@ -31,8 +31,8 @@ class AuthRepository implements IAuthRepository
     {
         $fields = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'string', 'min:5']
+            'email' => ['required', 'email'],
+            'password' => ['required', 'string', 'min:5', 'confirmed']
         ]);
 
         $user = User::create([

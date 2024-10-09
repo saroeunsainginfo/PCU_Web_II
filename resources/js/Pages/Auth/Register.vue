@@ -27,7 +27,8 @@ function submit() {
                 <InputField v-model="form.confirm_password" label="Confirm Password" type="password"
                     placeholder="********" />
                 <div>
-                    <Link :href="route('auth.login')" class="text-sm text-blue-500 hover:underline">Have account?</Link>
+                    <Link :href="route('auth.login.page')" class="text-sm text-blue-500 hover:underline">Have account?
+                    </Link>
                 </div>
                 <Button class="my-4" type="submit">Register</Button>
             </form>
